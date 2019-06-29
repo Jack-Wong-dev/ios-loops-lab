@@ -296,7 +296,33 @@ In this situation, the output will be the same.
 
 What's the difference between `break` and `continue`?  Give an example that demonstrates their differences.
 
- `break` stops the 
+The `break` statement stops the execution of a loop (or a switch) statement. It then jumps to the next statement following the loop or switch statement.
+
+The `continue` statement stops the execution of statements inside a loop (or a switch) statement. It then jumps back to evaluate the loop's expression again.
+
+// Example using break.
+
+var x = 0
+
+while(x < 10){
+    if(x == 2){
+        break       //program stops running once x==2
+}
+    print(x)
+    x+=1
+    }  // output should be '0' followed by '1' 
+
+
+
+// Example using continue
+while(x < 10){
+if(x == 2){
+x+=1
+continue;   // 2 never gets printed
+}
+print(x)
+x+=1
+}  // Output should be '1', '3', '4', '5', '6', '7', '8', '9'
 
 
 
