@@ -137,8 +137,14 @@ Given a range of numbers from 20 to 150 inclusive, print out all the numbers tha
 ```
 let someRange = 20...150
 
+//Solution 1 : Check if divisible by 2 and 3
 for i in someRange where i % 3 == 0 && i % 2 == 0{
 print(i)
+}
+
+//Solution 2: Check if divisible by 6 instead
+for i in someRange where i % 6 == 0{
+    print(i)
 }
 ```
 
@@ -167,10 +173,16 @@ Given a range of numbers from 20 to 150, print out all the numbers that follows 
 ```
 let someRange = 20...150
 
+//Solution 1: Use a if statement inside a for-in loop
 for i in someRange{
     if(i == 31 || i == 35 || (i >= 40 && i <= 60 )){
         print(i)
     }
+}
+
+//Solution 2: Use the keyword 'where' instead
+for i in someRange where (i == 31 || i == 35 || (i >= 40 && i <= 60 )){
+    print(i)
 }
 ```
 
@@ -187,7 +199,6 @@ while (i > 3) {
     i += 1
 }
 
-// Your explanation here
 // Variable 'i' will always be greater than 3
 // This is an infinite loop.  
 // It'll keep going until the computer runs out of memory.
@@ -300,6 +311,7 @@ The `break` statement stops the execution of a loop (or a switch) statement. It 
 
 The `continue` statement stops the execution of statements inside a loop (or a switch) statement. It then jumps back to evaluate the loop's expression again.
 
+```
 // Example using break.
 
 var x = 0
@@ -312,8 +324,8 @@ while(x < 10){
     x+=1
     }  // output should be '0' followed by '1' 
 
-
-
+```
+```
 // Example using continue
 while(x < 10){
 if(x == 2){
@@ -324,7 +336,7 @@ print(x)
 x+=1
 }  // Output should be '1', '3', '4', '5', '6', '7', '8', '9'
 
-
+```
 
 ***
 ## Question 17
@@ -433,9 +445,10 @@ Write code that prints out all the points in the area bounded by (0,0), (10,0), 
 ```
 var N = 10
 for x in 1...N{
-    for y in 1...N where x-y >= 5{
+    for y in 1...N where x-y >= 5 || y-x >= 5{
         print("\(x),\(y)", separator: "", terminator: " ")
     }
+    print("")
 }
 ```
 
